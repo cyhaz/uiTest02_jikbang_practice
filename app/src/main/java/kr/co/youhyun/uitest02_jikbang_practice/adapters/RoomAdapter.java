@@ -46,29 +46,13 @@ public class RoomAdapter extends ArrayAdapter<Room> {
 
 //        setText에는 int값을 넣지 말자!!!
 //        1만 이상이면 억 단위, 아니면 ,찍어서 숫자만 표기
-        if (data.getPrice() >= 10000) {
-            int uk = data.getPrice() / 10000;
-            int thousand = data.getPrice() % 10000;
-            if (thousand == 0) {
-                roomPriceTxt.setText(String.format("%d억", uk));
-            } else {
-                roomPriceTxt.setText(String.format("%d억 %,d", uk, thousand));
-            }
-        } else {
-            roomPriceTxt.setText(String.format("%,d", data.getPrice()));
-        }
+        roomPriceTxt.setText(data.getFormattedPrice());
+
 
 //        주소와 층수 결합해서 출력
-        String floorStr = "";
-        if (data.getFloor() > 0){
-            floorStr = String.format("%d층",data.getFloor());
-        } else if (data.getFloor() == 0) {
-            floorStr = "반지하";
-        } else {
-            floorStr = String.format("지하 %d층",data.getFloor()*-1);
-        }
-        roomAddressTxt.setText(String.format("%s, %s",data.getAddress(), floorStr));
+        roomAddressTxt.setText(String.format("%s, %s",data.getAddress(), data.getFormattedFloor()));
 
+//        상세설명 출력
         roomDetailTxt.setText(data.getDetail());
 
         return row;
