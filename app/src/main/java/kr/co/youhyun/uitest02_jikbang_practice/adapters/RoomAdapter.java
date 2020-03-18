@@ -63,7 +63,7 @@ public class RoomAdapter extends ArrayAdapter<Room> {
         } else {
             floorStr = String.format("지하 %d층",data.getFloor()*-1);
         }
-
+        roomDetailTxt.setText(data.getDetail());
 
         return row;
     }

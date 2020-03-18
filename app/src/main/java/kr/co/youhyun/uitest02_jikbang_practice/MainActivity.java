@@ -3,6 +3,7 @@ package kr.co.youhyun.uitest02_jikbang_practice;
 import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +46,6 @@ public class MainActivity extends BaseActivity {
         roomDatas.add(new Room(5500, "서울시 성북구 월곡동", 3, "투룸"));
         roomDatas.add(new Room(9700, "서울시 성북구 상월곡동", 0, "지하철 5분거리"));
         roomDatas.add(new Room(50000, "서울시 성북구 하월곡동", -1, "집주인 착함"));
-
         roomAdapter.notifyDataSetChanged();
     }
 
