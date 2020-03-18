@@ -37,15 +37,27 @@ public class RoomAdapter extends ArrayAdapter<Room> {
         if (row == null) {
             row = inf.inflate(R.layout.room_list_item, null);
         }
+
         Room data = mList.get(position);
 
         TextView roomPriceTxt = row.findViewById(R.id.roomPriceTxt);
-        TextView roomAddressFloorTxt = row.findViewById(R.id.roomAddressTxt);
+        TextView roomAddressTxt = row.findViewById(R.id.roomAddressTxt);
         TextView roomDetailTxt = row.findViewById(R.id.roomDetailTxt);
 
-        roomPriceTxt.setText((data.getPrice()));
-        roomAddressFloorTxt.setText(String.format("%s, %d층",data.getAddress(),data.getFloor()));
-        roomDetailTxt.setText(data.getDetail());
+//        setText에는 int값을 넣지 말자!!!
+//        1만 이상이면 억 단위, 아니면 ,찍어서 숫자만 표기
+        if (data.getPrice() >= 10000) {
+            int uk = data.getPrice() / 10000;
+            int thousand = data.getPrice() % 10000;
+            roomPriceTxt.setText(String.format("%d억 %,d", uk, thousand));
+        } else {
+            roomPriceTxt.setText(String.format("%,d", data.getPrice()));
+        }
+
+
+//        roomPriceTxt.setText((data.getPrice()));
+//        roomAddressTxt.setText(String.format("%s, %d층",data.getAddress(),data.getFloor()));
+//        roomDetailTxt.setText(data.getDetail());
 
         return row;
     }

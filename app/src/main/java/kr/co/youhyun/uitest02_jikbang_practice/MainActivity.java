@@ -46,7 +46,6 @@ public class MainActivity extends BaseActivity {
         roomDatas.add(new Room(9700, "서울시 성북구 상월곡동", 0, "지하철 5분거리"));
         roomDatas.add(new Room(50000, "서울시 성북구 하월곡동", -1, "집주인 착함"));
         roomAdapter.notifyDataSetChanged();
-
     }
 
 }
