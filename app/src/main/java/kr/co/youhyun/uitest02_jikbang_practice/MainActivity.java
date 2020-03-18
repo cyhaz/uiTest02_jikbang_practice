@@ -1,15 +1,28 @@
 package kr.co.youhyun.uitest02_jikbang_practice;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import kr.co.youhyun.uitest02_jikbang_practice.databinding.ActivityMainBinding;
+import kr.co.youhyun.uitest02_jikbang_practice.datas.Room;
+
 public class MainActivity extends BaseActivity {
+
+    List<Room> roomDatas = new ArrayList<>();
+    ActivityMainBinding binding = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
+        setupEvents();
+        setValues();
     }
 
     @Override
