@@ -49,7 +49,11 @@ public class RoomAdapter extends ArrayAdapter<Room> {
         if (data.getPrice() >= 10000) {
             int uk = data.getPrice() / 10000;
             int thousand = data.getPrice() % 10000;
-            roomPriceTxt.setText(String.format("%d억 %,d", uk, thousand));
+            if (thousand == 0) {
+                roomPriceTxt.setText(String.format("%d억", uk));
+            } else {
+                roomPriceTxt.setText(String.format("%d억 %,d", uk, thousand));
+            }
         } else {
             roomPriceTxt.setText(String.format("%,d", data.getPrice()));
         }
