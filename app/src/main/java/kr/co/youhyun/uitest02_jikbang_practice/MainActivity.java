@@ -44,6 +44,16 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+        binding.roomListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+//                꾹 누르고 있으면, 해당 방의 설명을 Toast로 출력
+                Room data = roomDatas.get(position);
+                Toast.makeText(mContext, data.getDetail(), Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
+
     }
 
     @Override
