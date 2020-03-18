@@ -9,7 +9,16 @@ public class Room implements Serializable {
     private int floor;
     private String detail;
 
+    // 생성자
+    public Room(int price, String address, int floor, String detail) {
+        this.price = price;
+        this.address = address;
+        this.floor = floor;
+        this.detail = detail;
 
+    }
+
+    // getter / setter
     public int getPrice() {
         return price;
     }
@@ -42,11 +51,4 @@ public class Room implements Serializable {
         this.detail = detail;
     }
 
-    public Room(int price, String address, int floor, String detail) {
-        this.price = price;
-        this.address = address;
-        this.floor = floor;
-        this.detail = detail;
-
-    }
 }
