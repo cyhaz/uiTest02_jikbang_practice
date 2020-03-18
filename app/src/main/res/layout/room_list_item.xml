@@ -26,28 +26,23 @@
                 android:id="@+id/roomPriceTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="가격"
+                android:text="8000"
                 android:textSize="25sp"
-                android:textColor="#FFBB11"
+                android:textColor="#F08326"
                 android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/roomAddressTxt"
+                android:layout_marginTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="주소"
+                android:text="서울시 성북구 돈암동, 1층"
                 android:textColor="#000000"
                 android:textSize="17sp"/>
 
             <TextView
-                android:id="@+id/roomFloarTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="층수"
-                android:textSize="17sp"/>
-
-            <TextView
                 android:id="@+id/roomDetailTxt"
+                android:layout_marginTop="3dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="상세설명"/>
