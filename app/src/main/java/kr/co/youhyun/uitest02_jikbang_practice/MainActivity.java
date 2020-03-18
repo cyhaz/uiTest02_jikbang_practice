@@ -1,6 +1,5 @@
 package kr.co.youhyun.uitest02_jikbang_practice;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
@@ -8,7 +7,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
 
-import kr.co.youhyun.uitest02_jikbang_practice.adapter.RoomAdapter;
+import kr.co.youhyun.uitest02_jikbang_practice.adapters.RoomAdapter;
 import kr.co.youhyun.uitest02_jikbang_practice.databinding.ActivityMainBinding;
 import kr.co.youhyun.uitest02_jikbang_practice.datas.Room;
 
