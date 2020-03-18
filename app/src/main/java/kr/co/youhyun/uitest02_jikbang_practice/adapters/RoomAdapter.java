@@ -1,10 +1,12 @@
 package kr.co.youhyun.uitest02_jikbang_practice.adapters;
 
 import android.content.Context;
+import android.location.Address;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,6 +37,15 @@ public class RoomAdapter extends ArrayAdapter<Room> {
         if (row == null) {
             row = inf.inflate(R.layout.room_list_item, null);
         }
+        Room data = mList.get(position);
+
+        TextView roomPriceTxt = row.findViewById(R.id.roomPriceTxt);
+        TextView roomAddressFloorTxt = row.findViewById(R.id.roomAddressTxt);
+        TextView roomDetailTxt = row.findViewById(R.id.roomDetailTxt);
+
+        roomPriceTxt.setText((data.getPrice()));
+        roomAddressFloorTxt.setText(String.format("%s, %d층",data.getAddress(),data.getFloor()));
+        roomDetailTxt.setText(data.getDetail());
 
         return row;
     }
