@@ -43,7 +43,5 @@ public class RoomDetailActivity extends BaseActivity {
         // 상세설명
         binding.detailText.setText(room.getDetail());
 
-
-
     }
 }
